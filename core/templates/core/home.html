@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">  
+  <head>    
+    <title>TAKER</title>    
+    <meta charset="UTF-8">
+    <meta name="title" content="TAKER">
+    {% load static %}
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet"/>
+    <link href="{% static 'core/css/chat.css' %}" rel="stylesheet"/>    
+  </head>  
+  <body>    
+  
+  {% for mensaje in mensajes %}
+  {% if mensaje.nombre == "taker" %}
+    <div class="container">
+    <img src="{% static 'core/img/bandmember.jpg'  %}" alt="Avatar">
+    <p>{{mensaje.mensaje}}</p>
+    <span class="time-right">{{mensaje.created}}</span>
+    </div>
+{% elif mensaje.nombre == "user" %}
+    <div class="container darker">
+    <img src="{% static 'core/img/avatar_g2.png'  %}" alt="Avatar" class="right">
+    <p>{{mensaje.mensaje}}</p>
+    <span class="time-left">{{mensaje.created}}</span>
+    </div>
+{% endif %}
+{% endfor %}
+<button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+
+    <h1>Chat</h1>
+    
+<form action="" method="POST" class="form-container">
+ {% csrf_token %}
+
+ 
+
+    <label for="msg"><b>Message</b></label>   
+    {{form.mensaje}}<!-- 
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+    -->
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form> 
+</div>
+
+
+<script src="{% static 'core/js/script.js'  %}"> </script>
+  </body>  
+</html>
+
