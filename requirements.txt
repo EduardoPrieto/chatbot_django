@@ -13,7 +13,6 @@ gast==0.2.2
 google-auth==1.10.2
 google-auth-oauthlib==0.4.1
 google-pasta==0.1.8
-psycopg2==2.6.2
 grpcio==1.26.0
 gunicorn==20.0.4
 h5py==2.8.0
