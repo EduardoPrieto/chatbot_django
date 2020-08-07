@@ -63,3 +63,4 @@ wcwidth==0.1.8
 Werkzeug==0.16.0
 wincertstore==0.2
 wrapt==1.11.2
+psycopg2==2.6.2
