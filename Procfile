@@ -1,1 +1,0 @@
-web: gunicorn taker1.wsgi
